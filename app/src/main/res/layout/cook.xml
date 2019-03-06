@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/toolbar"/>
+    <LinearLayout
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1.5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#dedcdc"
+                android:textSize="18dp"
+                android:fontFamily="@font/main"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Step 1 Of 3"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/brown"
+                android:textSize="18dp"
+                android:fontFamily="@font/main"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cook Details"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+            <RadioGroup
+                android:id="@+id/veg"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:buttonTint="@color/brown"
+                        android:clickable="true"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="VEG"/>
+                </LinearLayout>
+                <RadioButton
+                    android:buttonTint="@color/brown"
+                    android:clickable="true"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text=" NON-VEG"/>
+            </RadioGroup>
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+
+                android:background="#c6c3c3"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1.2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <Spinner
+
+                android:gravity="center"
+                android:background="@drawable/spinnershape"
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/main"
+
+                android:layout_centerHorizontal="true"
+                android:textColorHint="#000"
+                android:entries="@array/SelectArea"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/main"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Of Hours ?"/>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:weightSum="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/hdecrease"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp">
+
+                        <Button
+
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circleshape"
+                            android:gravity="center"
+                            android:text="—"
+                            android:textColor="@color/brown"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp">
+
+                        <TextView
+
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circleshape"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/brown"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/hincrease"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp">
+
+                        <Button
+
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circleshape"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="@color/brown"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/main"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Of Cooks ?"/>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:weightSum="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/cdecrease"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp">
+
+                        <Button
+
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circleshape"
+                            android:gravity="center"
+                            android:text="—"
+                            android:textColor="@color/brown"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp">
+
+                        <TextView
+
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circleshape"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/brown"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/cincrease"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp">
+
+                        <Button
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circleshape"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="@color/brown"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:weightSum="1"
+
+            android:layout_weight="1.4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+            <TextView
+
+                android:gravity="center|right"
+                android:layout_weight="0.5"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Price :"/>
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_weight="0.5"
+                android:textSize="20dp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""/>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/next"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/brown"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+            <TextView
+
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:fontFamily="@font/main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"/>
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

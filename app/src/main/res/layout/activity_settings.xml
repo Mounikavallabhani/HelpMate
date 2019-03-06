@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activitys.Settings"
+
+    android:background="@color/cream">
+
+    <LinearLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+           android:layout_marginLeft="20dp"
+          android:layout_marginTop="150dp"
+            android:background="@drawable/loginbackg"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:fontFamily="@font/main"
+                    android:gravity="center|right"
+                    android:text="Name :"
+                    android:textColor="@color/brown"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/main"
+                    android:text="Mounika "
+                    android:textColor="@color/brown"
+
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:gravity="center|right"
+                android:layout_weight="0.4"
+                android:textSize="15dp"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:textColor="@color/brown"
+                android:layout_height="wrap_content"
+                android:text="Email :"/>
+
+            <TextView
+                android:id="@+id/usermail"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:textSize="15dp"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:textColor="@color/brown"
+                android:layout_height="wrap_content"
+                android:text="m@gmail.com"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:gravity="center|right"
+                android:layout_weight="0.4"
+                android:textSize="15dp"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:textColor="@color/brown"
+                android:layout_height="wrap_content"
+                android:text="Phone Number :"/>
+
+            <TextView
+                android:id="@+id/userph"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:textSize="15dp"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="9876543211 "/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:gravity="center|right"
+                android:layout_weight="0.4"
+                android:textSize="15dp"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Address :"/>
+
+            <TextView
+                  android:id="@+id/useraddress"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:textSize="15dp"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="miyapur hmt colony street no 27 hyderabad "/>
+
+        </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+          android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="8dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <Button
+
+                    android:id="@+id/editprofile"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/brown"
+                    android:fontFamily="@font/main"
+                    android:text="Edit Profile"
+                    android:textColor="#fff" />
+
+                <android.support.v4.widget.Space
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="0.02" />
+
+                <Button
+                    android:id="@+id/changepassword"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/brown"
+                    android:fontFamily="@font/main"
+                    android:text="Change password"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <!--</android.support.v7.widget.CardView>-->
+
+</LinearLayout>

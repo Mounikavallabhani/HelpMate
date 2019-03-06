@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    tools:context=".Activitys.Login"
+    android:orientation="vertical">
+    <LinearLayout
+        android:background="@color/cream"
+        android:layout_weight="9"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/logo512"/>
+
+
+            <!--<TextView-->
+                <!--android:textColor="@color/brown"-->
+                <!--android:gravity="center"-->
+                <!--android:fontFamily="@font/main"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Register"/>-->
+            <!--<TextView-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:textColor="#c4c1c1"-->
+                <!--android:fontFamily="@font/main"-->
+                <!--android:gravity="center"-->
+                <!--android:textSize="15dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="We Help You Clean Your Home"/>-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <EditText
+                android:singleLine="true"
+                android:inputType="text"
+                android:id="@+id/rname"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:textColorHint="#c4c1c1"
+                android:fontFamily="@font/main"
+                android:layout_gravity="center"
+                android:background="@drawable/edittextshape"
+                android:gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="43dp"
+                android:hint="Name"/>
+            <EditText
+                android:singleLine="true"
+                android:id="@+id/rmail"
+                android:textSize="15dp"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#c4c1c1"
+                android:fontFamily="@font/main"
+                android:layout_gravity="center"
+                android:background="@drawable/edittextshape"
+                android:gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="43dp"
+                android:hint="Email Address"/>
+            <EditText
+                android:singleLine="true"
+                android:maxLength="10"
+                android:textSize="15dp"
+                android:inputType="number"
+                android:id="@+id/rnumber"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#c4c1c1"
+                android:fontFamily="@font/main"
+                android:layout_gravity="center"
+                android:background="@drawable/edittextshape"
+                android:gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="43dp"
+                android:hint="Phone Number"/>
+            <EditText
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:textSize="15dp"
+                android:id="@+id/rpassword"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#c4c1c1"
+                android:fontFamily="@font/main"
+                android:layout_gravity="center"
+                android:background="@drawable/edittextshape"
+                android:gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="43dp"
+                android:hint="Password"/>
+
+                <com.github.silvestrpredko.dotprogressbar.DotProgressBar
+                    android:id="@+id/dot_progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:visibility="invisible"
+                    />
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/register"
+                android:fontFamily="@font/main"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buttonshape"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:text="Register"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/brown">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:layout_gravity="center"
+            android:gravity="center|right"
+            android:fontFamily="@font/main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Registering,you agree all our"/>
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="110dp"
+            android:layout_marginLeft="110dp"
+            android:background="@color/white"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:gravity="center|left"
+            android:layout_gravity="center"
+            android:fontFamily="@font/main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms and Conditions"/>
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="150dp"
+            android:layout_marginLeft="150dp"
+            android:background="@color/white"/>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

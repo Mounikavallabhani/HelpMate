@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4c230d</color>
+    <color name="colorPrimaryDark">#e54e250f</color>
+    <color name="colorAccent">#4c230d</color>
+    <color name="yellow">#FFE600</color>
+    <color name="blue">#018BF8</color>
+    <color name="white">#FCFEF8</color>
+    <color name="block">#4c230d</color>
+    <color name="green">#29d726</color>
+    <color name="cream">#f1efe2</color>
+    <color name="brown">#4c230d</color>
+    <color name="liteyellow">#d3c84d</color>
+    <color name="tollbar">#beccca</color>
+    <color name="cremeone">#c3d9d7d7</color>
+    <color name="textcolorPrimary">#0b0b0b</color>
+    <color name="overflowMenuBg">#a6a5a1</color>
+    <color name="White1">#fff</color>
+</resources>

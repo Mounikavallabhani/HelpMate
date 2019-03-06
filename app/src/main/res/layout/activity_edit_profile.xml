@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/cream"
+    android:layout_height="match_parent"
+    tools:context=".Activitys.Settings">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/cream"
+        app:cardCornerRadius="5dp">
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:textColor="@color/brown"
+                    android:layout_height="wrap_content"
+                    android:text="Name :"/>
+
+                <EditText
+                    android:id="@+id/eusername"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=""/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/brown"
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email :"/>
+
+                <TextView
+                    android:id="@+id/eemail"
+                    android:textColor="@color/brown"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=" "/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/brown"
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number :"/>
+
+                <TextView
+                    android:id="@+id/eph"
+                    android:textColor="@color/brown"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=""/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/brown"
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Flat No/Door no:"/>
+
+                <EditText
+                    android:id="@+id/eflatno"
+                    android:paddingLeft="10dp"
+
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=""/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/brown"
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Area :"/>
+
+                <EditText
+                    android:id="@+id/earea"
+                    android:paddingLeft="10dp"
+
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=""/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/brown"
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Districts :"/>
+
+                <EditText
+                    android:id="@+id/edistrict"
+                    android:paddingLeft="10dp"
+
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=" "/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/brown"
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="State :"/>
+
+                <EditText
+                    android:id="@+id/estate"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=""/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/brown"
+                    android:gravity="center|right"
+                    android:layout_weight="0.4"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pincode :"/>
+
+                <EditText
+                    android:id="@+id/epincode"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittextshape"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/main"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text=" "/>
+
+            </LinearLayout>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/update"
+                android:fontFamily="@font/main"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buttonshape"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:text="Update"/>
+
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
