@@ -39,7 +39,7 @@ import static com.arkainfoteck.helpmate.Adapter.TimeSlotAdapter.counttime;
 import static com.arkainfoteck.helpmate.R.drawable.buttonshape;
 
 public class TimeSlot extends AppCompatActivity {
-        LinearLayout next;
+    LinearLayout next;
     TextView today,todate,tomorrowday,tomorrowdate,dayafterday,dayafterdate,later,displaydate;
     public DatePickerDialog fromDatePickerDialog;
     private SimpleDateFormat dateFormatter;
@@ -49,7 +49,7 @@ public class TimeSlot extends AppCompatActivity {
     LinearLayout lineartoday,lineartomorrow,lineardayaftertomorrow,linearfinalday;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-    String hours,cooks;
+    String hours,cooks,regilar_parttime;
     String year,year1,year2;
     int hoursint;
     View view;
@@ -62,15 +62,19 @@ public class TimeSlot extends AppCompatActivity {
     int count=1;
     DatabaseHelper databaseHelper;
     EditText special_instractions;
-    LinearLayout totallineralayout;
-
+    LinearLayout totallineralayout,time_details,dates_details;
+    TextView total_days;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_slot);
 
-        dateFormatter = new SimpleDateFormat("dd/mm/yyyy", Locale.US);
+        dateFormatter = new SimpleDateFormat("dd-mm-yyyy", Locale.US);
+        time_details=(LinearLayout)findViewById(R.id.dates_details);
+        dates_details=(LinearLayout)findViewById(R.id.dates_details);
 
+
+        total_days=(TextView)findViewById(R.id.total_days);
         today=(TextView)findViewById(R.id.today);
         todate=(TextView)findViewById(R.id.todate);
         tomorrowday=(TextView)findViewById(R.id.tomorrowday);
@@ -82,7 +86,6 @@ public class TimeSlot extends AppCompatActivity {
         next=(LinearLayout)findViewById(R.id.next);
         special_instractions=(EditText)findViewById(R.id.special_instractions);
         totallineralayout=findViewById(R.id.totallineralayout);
-
         special_instractions.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -102,6 +105,25 @@ public class TimeSlot extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
         hours=sharedPreferences.getString("hours",null);
         cooks = sharedPreferences.getString("cooks", null);
+        regilar_parttime=sharedPreferences.getString("regilar_parttime",null);
+
+        System.out.print("");
+        System.out.println("regular_parttime"+regilar_parttime);
+
+        // if regular means regular data will display part time means part time data will display
+        if(regilar_parttime.equals("Regular")){
+            Toast.makeText(TimeSlot.this,"time+details",Toast.LENGTH_LONG).show();
+            total_days.setText("get complete data");
+            time_details.setVisibility(View.VISIBLE);
+            dates_details.setVisibility(View.GONE);
+
+        }else {
+
+            Toast.makeText(TimeSlot.this,"dates_details",Toast.LENGTH_LONG).show();
+            time_details.setVisibility(View.GONE);
+            dates_details.setVisibility(View.VISIBLE);
+        }
+
         System.out.println("Noa"+hours);
         hoursint=Integer.parseInt(hours);
 
@@ -253,10 +275,10 @@ public class TimeSlot extends AppCompatActivity {
                 displaydate.setVisibility(View.INVISIBLE);
                 lineartoday.setBackgroundResource(R.drawable.timeshape);
 
-                    lineartomorrow.setBackgroundResource(R.drawable.selectitemshape);
+                lineartomorrow.setBackgroundResource(R.drawable.selectitemshape);
 
                 //change for oppo
-             //   lineartomorrow.setBackgroundResource(R.drawable.timeshape);
+                //   lineartomorrow.setBackgroundResource(R.drawable.timeshape);
 
 
 

@@ -39,7 +39,7 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
         viewHolder.phone.setText(orderHistoryModel.getPhone());
         viewHolder.active.setText(orderHistoryModel.getActive());
         Picasso.with(context)
-                .load("http://arkainfoteck.xyz/helpmate/dynamic/assets/image/"+orderHistoryModel.getImage())
+                .load("http://broomsticks.in/assets/image/"+orderHistoryModel.getImage())
                 .into(viewHolder.image);
 
     }

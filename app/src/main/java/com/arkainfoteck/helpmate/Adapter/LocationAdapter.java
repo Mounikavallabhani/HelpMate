@@ -74,10 +74,15 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
             int position=getAdapterPosition();
             DataModel modelMilk=this.dataModels.get(position);
             Intent intent=new Intent(this.context, DashBoard.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+
 
             sharedPreferences=context.getSharedPreferences("AddressDetails",Context.MODE_PRIVATE);
             editor = sharedPreferences.edit();
             editor.putString("location",modelMilk.getNear_by_place()+","+modelMilk.getLocality()+","+modelMilk.getApparent_house());
+            System.out.println("house_name"+modelMilk.getApparent_house()+"Apparemt_house"+modelMilk.getLocality());
             editor.commit();
             editor.apply();
 

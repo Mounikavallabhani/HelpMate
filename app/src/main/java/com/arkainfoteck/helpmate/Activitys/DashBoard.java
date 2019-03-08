@@ -189,20 +189,6 @@ public class DashBoard extends AppCompatActivity
         currentLoc = new GetCurrentLocation(DashBoard.this);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         sharedPreferences = getSharedPreferences("logindetails", Context.MODE_PRIVATE);
         String uname = sharedPreferences.getString("password", null);
 

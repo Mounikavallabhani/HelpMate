@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,8 @@ public class OrderHistory extends AppCompatActivity {
     String bookingid,typeof,registerid;
     LinearLayout ll_1;
     TextView messagetext;
+    Button start_job,stop_job;
+    LinearLayout owner_job_details;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,10 @@ public class OrderHistory extends AppCompatActivity {
         orderrecycle = findViewById(R.id.orderrecycle);
         ll_1=findViewById(R.id.ll_1);
         messagetext=findViewById(R.id.messagetext);
+        stop_job=findViewById(R.id.stop_job);
+        start_job=findViewById(R.id.start_job);
+        owner_job_details=(LinearLayout)findViewById(R.id.owner_job_details);
+
         sharedPreferences=getSharedPreferences("bookingid",Context.MODE_PRIVATE);
          bookingid=sharedPreferences.getString("booking",null);
          typeof=sharedPreferences.getString("type",null);
@@ -56,15 +63,29 @@ public class OrderHistory extends AppCompatActivity {
         registerid=sharedPreferences.getString("registerid",null);
 
 //
-        System.out.println("sadfgh"+bookingid);
-        System.out.println("dfghj"+typeof);
-        System.out.println("xcvb"+registerid);
+        System.out.println("bocking_id"+bookingid);
+        System.out.println("typeof_person"+typeof);
+        System.out.println("user+register_id"+registerid);
 
         getDataFromServer();
 
 
+        // start person work
+        start_job.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stop_job.setVisibility(View.VISIBLE);
+                Toast.makeText(OrderHistory.this,"Job started here",Toast.LENGTH_LONG).show();
+            }
+        });
+        stop_job.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start_job.setText(" Working ");
 
-
+                Toast.makeText(OrderHistory.this,"Job stoped here",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 
@@ -104,11 +125,10 @@ public class OrderHistory extends AppCompatActivity {
                                 ll_1.setVisibility(View.VISIBLE);
                                 messagetext.setText(message);
 
-                                //Toast.makeText(OrderHistory.this,""+jsonObject1,Toast.LENGTH_LONG).show();
-
                             }
                             else
                             {
+                                owner_job_details.setVisibility(View.VISIBLE);
                                 gridLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
                                 orderrecycle.setLayoutManager(gridLayoutManager);
                                 orderHistoryModels = new ArrayList<>();
@@ -128,12 +148,9 @@ public class OrderHistory extends AppCompatActivity {
                                     active_status = jsonObject.getString("active_status");
 
                                     orderHistoryModels.add(new OrderHistoryModel(cook_image, cook_name, phone, active_status, id, cook_id));
-
                                 }
-
                                 orderHistoryAdapter = new OrderHistoryAdapter(OrderHistory.this, orderHistoryModels);
                                 orderrecycle.setAdapter(orderHistoryAdapter);
-
 
                             }
 

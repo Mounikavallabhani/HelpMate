@@ -55,10 +55,26 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/time_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/total_days"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/accept"
+                        android:fontFamily="@font/main"
+                        android:gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/dates_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -216,6 +232,7 @@
 
                 </LinearLayout>
 
+
                 <LinearLayout
 
                     android:layout_width="match_parent"
@@ -240,9 +257,11 @@
                 </LinearLayout>
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp">
+
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/recyclerViewtime"
@@ -252,7 +271,6 @@
 
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:clickable="true"
@@ -287,42 +305,42 @@
                         android:textSize="15dp" />
 
                 </LinearLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:id="@+id/next"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buttonshape"
-                    android:gravity="center"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/next"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonshape"
+                        android:gravity="center"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="horizontal">
 
-                    <TextView
+                        <TextView
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/main"
-                        android:text="Next"
-                        android:textColor="#fff"
-                        android:textSize="18dp" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/main"
+                            android:text="Next"
+                            android:textColor="#fff"
+                            android:textSize="18dp" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="2dp"
-                        android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
 
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </RelativeLayout>
+                </RelativeLayout>
 
             </LinearLayout>
 

@@ -172,6 +172,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp" />
 
+                <EditText
+                    android:fontFamily="@font/main"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:id="@+id/house_number"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:hint="House"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/cedittextshape"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+                <EditText
+                    android:fontFamily="@font/main"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:id="@+id/colony_name"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:hint="Colony Name"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/cedittextshape"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
 
 
                 <EditText
@@ -185,52 +211,8 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/cedittextshape"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="40dp" />
             </LinearLayout>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioGroup
-              android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                    <RadioButton
-
-                        android:buttonTint="@color/brown"
-                        android:clickable="true"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/main"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="Home"/>
-
-                <RadioButton
-                    android:layout_marginLeft="20dp"
-                    android:buttonTint="@color/brown"
-                    android:clickable="true"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Office"/>
-
-                <RadioButton
-                    android:layout_marginLeft="20dp"
-                    android:buttonTint="@color/brown"
-                    android:clickable="true"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Other"/>
-            </RadioGroup>
 
 
         </LinearLayout>

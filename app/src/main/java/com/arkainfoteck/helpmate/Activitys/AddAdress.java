@@ -42,7 +42,6 @@ public class AddAdress extends AppCompatActivity {
                 if (null != rb ) {
                     Toast.makeText(AddAdress.this, rb.getText(), Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -67,6 +66,8 @@ public class AddAdress extends AppCompatActivity {
                     databaseHelper.insertdata(clandmark1,house1,locality1,nearbyplace1);
 
                     Intent intent = new Intent(AddAdress.this,ChangeArea.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
 
                     house.setText("");

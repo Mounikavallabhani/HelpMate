@@ -25,12 +25,62 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/orderrecycle">
         </android.support.v7.widget.RecyclerView>
 
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/owner_job_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cream"
+        android:layout_gravity="center"
+         app:cardElevation="3dp">
+        <LinearLayout
+
+            android:weightSum="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:textColor="#fff"
+                android:id="@+id/start_job"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/button_background"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:textAllCaps="false"
+                android:text="Start job"/>
+            <android.support.v4.widget.Space
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:visibility="gone"
+                android:textColor="#fff"
+                android:id="@+id/stop_job"
+                android:textAllCaps="false"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/button_background"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text="Stop job"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
     </LinearLayout>
 </LinearLayout>

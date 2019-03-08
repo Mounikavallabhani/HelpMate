@@ -59,53 +59,51 @@ public class TimeSlotAdapter  extends RecyclerView.Adapter<TimeSlotAdapter.ViewH
 
         TextView timeslot;
         LinearLayout lineartime;
-        ArrayList<TimeSlotModel>timeSlotModels;
+        ArrayList<TimeSlotModel> timeSlotModels;
         DatabaseHelper databaseHelper;
         Context context;
         int hours;
         TimeSlotModel timeSlotModel;
 
 
-
-        public ViewHolder(@NonNull View itemView, Context context, ArrayList<TimeSlotModel>timeSlotModels, String hours, DatabaseHelper databaseHelper) {
+        public ViewHolder(@NonNull View itemView, Context context, ArrayList<TimeSlotModel> timeSlotModels, String hours, DatabaseHelper databaseHelper) {
             super(itemView);
-            this.context=context;
-            this.timeSlotModels=timeSlotModels;
-            this.hours=Integer.parseInt(hours);
-            this. databaseHelper= databaseHelper;
+            this.context = context;
+            this.timeSlotModels = timeSlotModels;
+            this.hours = Integer.parseInt(hours);
+            this.databaseHelper = databaseHelper;
             itemView.setClickable(true);
             itemView.setOnClickListener(this);
 
-            timeslot=itemView.findViewById(R.id.timeslot);
-            lineartime=(LinearLayout)itemView.findViewById(R.id.lineartime);
+            timeslot = itemView.findViewById(R.id.timeslot);
+            lineartime = (LinearLayout) itemView.findViewById(R.id.lineartime);
         }
 
         @Override
         public void onClick(View v) {
             counttime++;
 
-           if(counthours<=hours){
+            if (counthours <= hours) {
 
-              counthours++;
+                counthours++;
 
-               System.out.println("counthours"+counthours);
-               System.out.print("counttime"+counttime);
-               System.out.println("hours"+hours);
+                System.out.println("counthours" + counthours);
+                System.out.print("counttime" + counttime);
+                System.out.println("hours" + hours);
 
-               lineartime.setBackgroundResource(R.drawable.selectitemshape);
-               int position=getAdapterPosition();
-               timeSlotModel=this.timeSlotModels.get(position);
+                lineartime.setBackgroundResource(R.drawable.selectitemshape);
+                int position = getAdapterPosition();
+                timeSlotModel = this.timeSlotModels.get(position);
 
-              /// Toast.makeText(context,"You Selected "+timeSlotModel.getTime(),Toast.LENGTH_LONG).show();
+                /// Toast.makeText(context,"You Selected "+timeSlotModel.getTime(),Toast.LENGTH_LONG).show();
 
-              long count = databaseHelper.inserttimedata(timeSlotModel.getTime()+",");
-              //Toast.makeText(context,"You Selected "+count,Toast.LENGTH_LONG).show();
-               System.out.println("getcount"+count);
-           }else {
-          Toast.makeText(context,"You Selected "+hours+" only",Toast.LENGTH_LONG).show();
+                long count = databaseHelper.inserttimedata(timeSlotModel.getTime() + ",");
+                //Toast.makeText(context,"You Selected "+count,Toast.LENGTH_LONG).show();
+                System.out.println("getcount" + count);
+            } else {
+                Toast.makeText(context, "You Selected " + hours + " only", Toast.LENGTH_LONG).show();
 
-           }
+            }
         }
     }
-
 }

@@ -23,6 +23,7 @@ public class CheckOut extends AppCompatActivity {
     String scaddress;
 
     LinearLayout details;
+    EditText house_number,colony_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,8 @@ public class CheckOut extends AppCompatActivity {
         cmail=findViewById(R.id.cmail);
         cnumber=findViewById(R.id.cnumber);
         caddress=findViewById(R.id.caddress);
-
+        house_number=(EditText)findViewById(R.id.house_number);
+        colony_name=(EditText)findViewById(R.id.colony_name);
 
 
 

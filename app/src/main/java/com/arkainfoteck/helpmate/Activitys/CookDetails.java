@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class CookDetails extends AppCompatActivity {
     LinearLayout next;
     Button hdecrease,cdecrease,hincrease,cincrease;
-    TextView add,hadd,cadd,titlename;
+    TextView add,hadd,cadd,regular,parttime;
     int count = 1;
     int counts=1;
     int countss=1;
@@ -39,6 +39,7 @@ public class CookDetails extends AppCompatActivity {
     TextView details,hours,cooks;
     LinearLayout linearLayout;
     String cookdetails="";
+    String regilar_parttime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +56,26 @@ public class CookDetails extends AppCompatActivity {
         hours=(TextView)findViewById(R.id.hours);
         cooks=(TextView)findViewById(R.id.cooks);
         linearLayout=(LinearLayout)findViewById(R.id.linearlayout);
+        parttime=(TextView)findViewById(R.id.parttime);
+        regular=(TextView)findViewById(R.id.regular);
 
+        parttime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parttime.setBackgroundResource(R.drawable.selectitemshape);
+                regular.setBackgroundResource(R.drawable.timeshape);
+                regilar_parttime= parttime.getText().toString();
+            }
+        });
 
+        regular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                regular.setBackgroundResource(R.drawable.selectitemshape);
+                parttime.setBackgroundResource(R.drawable.timeshape);
+                regilar_parttime= regular.getText().toString();
+            }
+        });
         cookdetails=""+getIntent().getStringExtra("cookdetails");
         System.out.println("edfgh"+cookdetails);
         String noofhours=""+getIntent().getStringExtra("noofhours");
@@ -87,57 +106,6 @@ public class CookDetails extends AppCompatActivity {
         hadd=(TextView)findViewById(R.id.hadd);
         cadd=(TextView)findViewById(R.id.cadd);
 
-      /*  final Spinner spinner=(Spinner)findViewById(R.id.spiner);
-
-        final ArrayList arrayList=new ArrayList<>();
-
-        arrayList.add("-- Food Type --");
-        arrayList.add("North Indian");
-        arrayList.add("South indian");
-        arrayList.add("Rayalasima");
-        arrayList.add("Guntur");
-        arrayList.add("Telagana");
-
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(CookDetails.this,R.layout.spiner_items,arrayList) {
-
-            public View getView(int position, View convertView,ViewGroup parent) {
-
-                View v = super.getView(position, convertView, parent);
-                TextView textView=(TextView)v.findViewById(R.id.cust_view);
-
-                textView.setTextSize(16);
-
-                return v;
-            }
-
-            public View getDropDownView(int position, View convertView,ViewGroup parent) {
-
-                View v = super.getDropDownView(position, convertView,parent);
-                TextView textView=(TextView)v.findViewById(R.id.cust_view);
-
-                textView.setGravity(Gravity.CENTER);
-
-                return v;
-
-            }
-
-        };*/
-//        spinner.setAdapter(adapter);
-//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                arrayList.remove("-- Food Type --");
-//                //    Toast.makeText(CookDetails.this,spinner.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
 
         try {
 
@@ -207,45 +175,47 @@ public class CookDetails extends AppCompatActivity {
         }
 
 
-try {
+        try {
 
-    next.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (cookdetails.equals("Cook Details")) {
+            next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (cookdetails.equals("Cook Details")) {
 
-                if (veg.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(getApplicationContext(), "Please select Cooktype", Toast.LENGTH_SHORT).show();
-                } else {
+                        if (veg.getCheckedRadioButtonId() == -1) {
+                            Toast.makeText(getApplicationContext(), "Please select Cooktype", Toast.LENGTH_SHORT).show();
+                        } else {
 
-                    Intent intent = new Intent(CookDetails.this, TimeSlot.class);
-                    sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
-                    editor = sharedPreferences.edit();
-                    editor.putString("hours", hadd.getText().toString());
-                    editor.putString("cooks", cadd.getText().toString());
-                    editor.apply();
-                    editor.commit();
+                            Intent intent = new Intent(CookDetails.this, TimeSlot.class);
+                            sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
+                            editor = sharedPreferences.edit();
+                            editor.putString("hours", hadd.getText().toString());
+                            editor.putString("cooks", cadd.getText().toString());
+                            editor.putString("regilar_parttime",regilar_parttime);
+                            editor.apply();
+                            editor.commit();
 
-                    startActivity(intent);
+                            startActivity(intent);
+                        }
+                    } else {
+                        Intent intent = new Intent(CookDetails.this, TimeSlot.class);
+                        sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
+                        editor = sharedPreferences.edit();
+                        editor.putString("hours", hadd.getText().toString());
+                        editor.putString("cooks", cadd.getText().toString());
+                        editor.putString("regilar_parttime",regilar_parttime);
+                        editor.apply();
+                        editor.commit();
+
+                        startActivity(intent);
+
+                    }
                 }
-            } else {
-                Intent intent = new Intent(CookDetails.this, TimeSlot.class);
-                sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
-                editor = sharedPreferences.edit();
-                editor.putString("hours", hadd.getText().toString());
-                editor.putString("cooks", cadd.getText().toString());
-                editor.apply();
-                editor.commit();
+            });
+        }catch (Exception e)
+        {
 
-                startActivity(intent);
-
-            }
         }
-    });
-}catch (Exception e)
-{
-
-}
 
 
 
@@ -288,10 +258,6 @@ try {
         }catch (Exception e){
 
         }
-
-
-
-
     }
 }
 
