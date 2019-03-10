@@ -49,7 +49,7 @@ public class ProductAdopter extends RecyclerView.Adapter<ProductAdopter.Myview> 
        myview.strickoff.setText(productModel.getContent2());
        myview.contant.setText(productModel.getContent());
         Picasso.with(context)
-                .load("http://arkainfoteck.xyz/helpmate/dynamic/assets/ns/"+productModel.getImage() )
+                .load("http://broomsticks.in/assets/ns/"+productModel.getImage() )
                 .fit()
                 .into(myview.imageView);
     }

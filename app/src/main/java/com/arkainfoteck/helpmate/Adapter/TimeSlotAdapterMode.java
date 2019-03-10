@@ -12,22 +12,23 @@ import android.widget.Toast;
 
 import com.arkainfoteck.helpmate.Activitys.DatabaseHelper;
 import com.arkainfoteck.helpmate.Model.TimeSlotModel;
+import com.arkainfoteck.helpmate.Model.TimeSlotModelMade;
 import com.arkainfoteck.helpmate.R;
 
 import java.util.ArrayList;
 
-public class TimeSlotAdapter  extends RecyclerView.Adapter<TimeSlotAdapter.ViewHolder> {
+public class TimeSlotAdapterMode extends RecyclerView.Adapter<TimeSlotAdapterMode.ViewHolder> {
 
     Context context;
-    ArrayList<TimeSlotModel>timeSlotModels;
+    ArrayList<TimeSlotModelMade> timeSlotModels;
     String hours;
     DatabaseHelper databaseHelper;
     public static   int counthours=1;
     public static int counttime=0;
 
-    TimeSlotModel timeSlotModel;
+    TimeSlotModelMade timeSlotModel;
 
-    public  TimeSlotAdapter(Context context, ArrayList<TimeSlotModel> timeSlotModels, String hours, DatabaseHelper databaseHelper) {
+    public  TimeSlotAdapterMode(Context context, ArrayList<TimeSlotModelMade> timeSlotModels, String hours, DatabaseHelper databaseHelper) {
         this.context = context;
         this.timeSlotModels = timeSlotModels;
         this.hours=hours;
@@ -38,14 +39,14 @@ public class TimeSlotAdapter  extends RecyclerView.Adapter<TimeSlotAdapter.ViewH
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public TimeSlotAdapterMode.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater layoutInflater=LayoutInflater.from(context);
         View view=layoutInflater.inflate(R.layout.timeslotadapter,viewGroup,false);
-        return new ViewHolder(view,context,timeSlotModels,hours,databaseHelper);
-        }
+        return new TimeSlotAdapterMode.ViewHolder(view,context,timeSlotModels,hours,databaseHelper);
+    }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull TimeSlotAdapterMode.ViewHolder viewHolder, int i) {
         timeSlotModel=timeSlotModels.get(i);
         viewHolder.timeslot.setText(timeSlotModel.getTime());
 
@@ -60,14 +61,14 @@ public class TimeSlotAdapter  extends RecyclerView.Adapter<TimeSlotAdapter.ViewH
 
         TextView timeslot;
         LinearLayout lineartime;
-        ArrayList<TimeSlotModel> timeSlotModels;
+        ArrayList<TimeSlotModelMade> timeSlotModels;
         DatabaseHelper databaseHelper;
         Context context;
         int hours;
-        TimeSlotModel timeSlotModel;
+        TimeSlotModelMade timeSlotModel;
 
 
-        public ViewHolder(@NonNull View itemView, Context context, ArrayList<TimeSlotModel> timeSlotModels, String hours, DatabaseHelper databaseHelper) {
+        public ViewHolder(@NonNull View itemView, Context context, ArrayList<TimeSlotModelMade> timeSlotModels, String hours, DatabaseHelper databaseHelper) {
             super(itemView);
             this.context = context;
             this.timeSlotModels = timeSlotModels;

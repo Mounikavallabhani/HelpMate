@@ -39,7 +39,7 @@ public class CookDetails extends AppCompatActivity {
     TextView details,hours,cooks;
     LinearLayout linearLayout;
     String cookdetails="";
-    String regilar_parttime;
+    String regilar_parttime="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +64,7 @@ public class CookDetails extends AppCompatActivity {
             public void onClick(View v) {
                 parttime.setBackgroundResource(R.drawable.selectitemshape);
                 regular.setBackgroundResource(R.drawable.timeshape);
-                regilar_parttime= parttime.getText().toString();
+                regilar_parttime= "Part time";
             }
         });
 
@@ -73,7 +73,7 @@ public class CookDetails extends AppCompatActivity {
             public void onClick(View v) {
                 regular.setBackgroundResource(R.drawable.selectitemshape);
                 parttime.setBackgroundResource(R.drawable.timeshape);
-                regilar_parttime= regular.getText().toString();
+                regilar_parttime= "Regular";
             }
         });
         cookdetails=""+getIntent().getStringExtra("cookdetails");
@@ -99,9 +99,6 @@ public class CookDetails extends AppCompatActivity {
         }catch (Exception e){
 
         }
-
-
-
 
         hadd=(TextView)findViewById(R.id.hadd);
         cadd=(TextView)findViewById(R.id.cadd);
@@ -151,11 +148,9 @@ public class CookDetails extends AppCompatActivity {
 
                 }
             });
-
         }catch (Exception e){
 
         }
-
         try {
 
             hdecrease.setOnClickListener(new View.OnClickListener() {
@@ -165,28 +160,47 @@ public class CookDetails extends AppCompatActivity {
                         countss--;
                         hadd.setText(""+String.valueOf(countss));
                     }
-
                 }
             });
-
-
         }catch (Exception e){
 
         }
-
-
         try {
 
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    System.out.println("regular_time"+regilar_parttime);
+
                     if (cookdetails.equals("Cook Details")) {
 
                         if (veg.getCheckedRadioButtonId() == -1) {
                             Toast.makeText(getApplicationContext(), "Please select Cooktype", Toast.LENGTH_SHORT).show();
-                        } else {
+                        } else if(regilar_parttime.equals("")) {
+                            Toast.makeText(getApplicationContext(), "Please select type", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(CookDetails.this, TimeSlot.class);
+                        }else {
+                                Intent intent = new Intent(CookDetails.this, TimeSlot.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
+                                editor = sharedPreferences.edit();
+                                editor.putString("hours", hadd.getText().toString());
+                                editor.putString("cooks", cadd.getText().toString());
+                                editor.putString("regilar_parttime",regilar_parttime);
+                                editor.apply();
+                                editor.commit();
+
+                                startActivity(intent);
+                            }
+                       } else if(regilar_parttime.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please select type", Toast.LENGTH_SHORT).show();
+
+                       }else {
+                            Intent intent = new Intent(CookDetails.this, TimeSlotMade.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                             sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
                             editor = sharedPreferences.edit();
                             editor.putString("hours", hadd.getText().toString());
@@ -197,31 +211,12 @@ public class CookDetails extends AppCompatActivity {
 
                             startActivity(intent);
                         }
-                    } else {
-                        Intent intent = new Intent(CookDetails.this, TimeSlot.class);
-                        sharedPreferences = getSharedPreferences("cookdetails", Context.MODE_PRIVATE);
-                        editor = sharedPreferences.edit();
-                        editor.putString("hours", hadd.getText().toString());
-                        editor.putString("cooks", cadd.getText().toString());
-                        editor.putString("regilar_parttime",regilar_parttime);
-                        editor.apply();
-                        editor.commit();
-
-                        startActivity(intent);
-
                     }
-                }
             });
         }catch (Exception e)
         {
-
+                 e.printStackTrace();
         }
-
-
-
-
-
-
         try {
 
             veg=(RadioGroup)findViewById(R.id.veg);

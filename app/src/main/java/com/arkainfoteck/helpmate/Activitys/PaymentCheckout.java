@@ -57,6 +57,7 @@ public class PaymentCheckout extends AppCompatActivity implements PaymentResultL
     String scooks,shours,date,timeslats,special_instraction,completeaddress,completetoday;
     String razorpayPaymentID;
     String cooktypedetails;
+    String regilar_parttime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +107,9 @@ public class PaymentCheckout extends AppCompatActivity implements PaymentResultL
         sharedPreferences5 =getSharedPreferences("AddressData",Context.MODE_PRIVATE);
         completeaddress=sharedPreferences5.getString("completeaddress",null);
 
+        // booking type
+        regilar_parttime=sharedPreferences.getString("regilar_parttime",null);
+
         // get current time
         Date now = new Date();
         Calendar cal = Calendar.getInstance();
@@ -136,6 +140,38 @@ public class PaymentCheckout extends AppCompatActivity implements PaymentResultL
             public void onClick(View v) {
 
 
+                System.out.println("user_id"+registerid);
+                System.out.println("user_name"+scname);
+                System.out.println("item_type"+cooktypedetails);
+
+                System.out.println("no_hour"+shours);
+                System.out.println("no_cook"+scooks);
+                System.out.println("dates"+date);
+                System.out.println("timeing"+timeslats);
+                System.out.println("special"+special_instraction);
+                System.out.println("name"+scname);
+
+                System.out.println("phone"+snoumber);
+                System.out.println("email"+gmail);
+                System.out.println("location"+"No location");
+
+                System.out.println("address"+completeaddress);
+                System.out.println("orderedtime"+completetoday);
+                System.out.println("price"+String.valueOf(finalamount));
+
+                System.out.println("offer_amount"+"0");
+                System.out.println("orderedtime"+completetoday);
+                System.out.println("price"+String.valueOf(finalamount));
+                System.out.println("tax"+"0");
+                System.out.println("net_price"+String.valueOf(finalamount));
+                System.out.println("razorpay_id"+"no razorid");
+                System.out.println("payment_method"+"Cash on delivery");
+                System.out.println("bookingtype"+nameofimage);
+                System.out.println("type"+nameofimage);
+                System.out.println("image"+imagedata);
+                System.out.println("booking_type"+regilar_parttime);
+
+
 
                 RequestQueue rq = Volley.newRequestQueue(PaymentCheckout.this);
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,
@@ -150,7 +186,6 @@ public class PaymentCheckout extends AppCompatActivity implements PaymentResultL
                                 startActivity(intent);
                             }
 
-                            ;
                         }, new Response.ErrorListener() {
 
                     @Override
@@ -171,10 +206,10 @@ public class PaymentCheckout extends AppCompatActivity implements PaymentResultL
                         params.put("no_cook", scooks);
                         params.put("dates", date);
                         params.put("timeing", timeslats);
-                        params.put("special", special_instraction);
-                        params.put("name", scname);
-                        params.put("phone", snoumber);
-                        params.put("email", gmail);
+                        params.put("special", ""+special_instraction);
+                        params.put("name", ""+scname);
+                        params.put("phone", ""+snoumber);
+                        params.put("email", ""+gmail);
                         params.put("location", "No_Locations");
                         params.put("address", completeaddress);
                         params.put("address_type", "Home");
@@ -182,13 +217,15 @@ public class PaymentCheckout extends AppCompatActivity implements PaymentResultL
                         params.put("price",String.valueOf(finalamount) );
                         params.put("offer_amount","0" );
                         params.put("tax", "0");
-                        params.put("net_price",String.valueOf(finalamount));
+                        params.put("net_price",""+String.valueOf(finalamount));
                         params.put("razorpay_id", "no razorid");
                         params.put("razorpay_status","false" );
                         params.put("payment_method","Cash on delivery" );
-                        params.put("bookingtype",nameofimage);
-                        params.put("type",nameofimage);
+                        params.put("bookingtype",""+nameofimage);
+                        params.put("type",""+nameofimage);
                         params.put("image",imagedata);
+                        params.put("booking_type",""+regilar_parttime);
+
                         return params;
                     }
                 } ;
@@ -327,6 +364,7 @@ public class PaymentCheckout extends AppCompatActivity implements PaymentResultL
                 params.put("razorpay_status","paid" );
                 params.put("payment_method","Online" );
                 params.put("bookingtype",nameofimage);
+                params.put("booking_type",regilar_parttime);
 
                 return params;
             }

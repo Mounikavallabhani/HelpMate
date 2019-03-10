@@ -22,7 +22,7 @@ public class JobDetails extends AppCompatActivity {
     LinearLayout paynow;
     TextView price,totalprice,subtotal,discount,taxs,cookname;
     ImageView back;
-    SharedPreferences sharedPreferences,sharedPreferences1;
+    SharedPreferences sharedPreferences,sharedPreferences1,sharedPreferences2;
     SharedPreferences.Editor editor1;
     String fooddetails;
     TextView cooktype,jobhours,jobcooks,jobdate,jobtime;
@@ -33,11 +33,14 @@ public class JobDetails extends AppCompatActivity {
     String time_slats="";
     LinearLayout applycoupon;
     String timedata;
+    String regilar_parttime_type;
+    TextView type_of_delivary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
 //        price=(TextView)findViewById(R.id.price);
+        type_of_delivary=(TextView)findViewById(R.id.type_of_delivary);
         applycoupon=(LinearLayout)findViewById(R.id.applycoupon);
         totalprice=(TextView)findViewById(R.id.totalprice);
         subtotal=(TextView)findViewById(R.id.subtotal);
@@ -63,13 +66,38 @@ public class JobDetails extends AppCompatActivity {
         sharedPreferences=getSharedPreferences("cookdetails",Context.MODE_PRIVATE);
         String shours=sharedPreferences.getString("hours",null);
         String scooks=sharedPreferences.getString("cooks",null);
+        regilar_parttime_type=sharedPreferences.getString("regilar_parttime",null);
+
+         System.out.print("get_find_type_tiii"+regilar_parttime_type+""+shours);
+
         jobhours.setText(shours);
         jobcooks.setText(scooks);
+        type_of_delivary.setText(regilar_parttime_type);
 
+        if(regilar_parttime_type.equals("Regular")){
+            datamodel=new ArrayList<>();
+            database = new DatabaseHelper(JobDetails.this);
+            datamodel=  database.gettimedata();
+            for(int i=0;i<datamodel.size();i++){
+                time_slats+= datamodel.get(i).getTime_slat();
+                timedata=datamodel.get(0).getTime_slat();
+
+                System.out.println("whatgetting"+time_slats);
+            }
+            jobtime.setText(timedata);
+
+
+        }else {
+            sharedPreferences2 =getSharedPreferences("part_time_details",Context.MODE_PRIVATE);
+            String timeslot_full_dates=sharedPreferences2.getString("time_slots",null);
+            jobtime.setText(timeslot_full_dates);
+
+
+        }
         // date
         sharedPreferences =getSharedPreferences("datedetails",Context.MODE_PRIVATE);
         String date=sharedPreferences.getString("date",null);
-        System.out.println("kjkfghjk"+date);
+        System.out.println("get_bocking_date"+date);
         jobdate.setText(date);
 
         SharedPreferences sharedPreferences=getSharedPreferences("timeslot",Context.MODE_PRIVATE);
@@ -137,23 +165,14 @@ public class JobDetails extends AppCompatActivity {
         });
 
 
-        datamodel=new ArrayList<>();
-        database = new DatabaseHelper(JobDetails.this);
-        datamodel=  database.gettimedata();
-        for(int i=0;i<datamodel.size();i++){
-            time_slats+= datamodel.get(i).getTime_slat();
-             timedata=datamodel.get(0).getTime_slat();
-
-            System.out.println("whatgetting"+time_slats);
-        }
-        jobtime.setText(timedata);
-
-
         SharedPreferences sharedPreferences2=getSharedPreferences("Timeshedule",MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences2.edit();
-        editor.putString("timeslats",time_slats.toString());
+        editor.putString("timeslats",jobtime.getText().toString());
         editor.apply();
         editor.commit();
+
+
+
     }
 
     @Override

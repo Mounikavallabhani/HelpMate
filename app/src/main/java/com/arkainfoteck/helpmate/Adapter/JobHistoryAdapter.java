@@ -8,8 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.arkainfoteck.helpmate.Activitys.OrderHistory;
 import com.arkainfoteck.helpmate.Model.JobHistoryModel;
@@ -41,7 +43,7 @@ public class JobHistoryAdapter extends RecyclerView.Adapter<JobHistoryAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         JobHistoryModel jobHistoryModel=jobHistoryModels.get(i);
         viewHolder.bookingid.setText(jobHistoryModel.getMaid_book_id());
         viewHolder.timings.setText(jobHistoryModel.getTimeing());
@@ -49,13 +51,18 @@ public class JobHistoryAdapter extends RecyclerView.Adapter<JobHistoryAdapter.Vi
         viewHolder.typeperson.setText(jobHistoryModel.getType());
         viewHolder.noofmaids.setText(jobHistoryModel.getNo_maids());
         viewHolder.price.setText(jobHistoryModel.getNet_price());
+        viewHolder.cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"we will revert back your payment in 7 working days",Toast.LENGTH_LONG).show();
+
+                viewHolder.cancel.setText("Job Cancelled");
+            }
+        });
         Picasso.with(context)
                 .load("http://broomsticks.in/assets/ns/"+jobHistoryModel.getImage())
                 .into(viewHolder.personimage);
-
-
     }
-
     @Override
     public int getItemCount() {
         return jobHistoryModels.size();
@@ -66,6 +73,7 @@ public class JobHistoryAdapter extends RecyclerView.Adapter<JobHistoryAdapter.Vi
         List<JobHistoryModel>jobHistoryModels;
         TextView bookingid,timings,date,typeperson,noofmaids,price;
         ImageView personimage;
+        Button cancel;
         public ViewHolder(@NonNull View itemView,Context context,List<JobHistoryModel>jobHistoryModels) {
             super(itemView);
             this.context=context;
@@ -79,6 +87,7 @@ public class JobHistoryAdapter extends RecyclerView.Adapter<JobHistoryAdapter.Vi
             noofmaids=itemView.findViewById(R.id.noofmaids);
             price=itemView.findViewById(R.id.cost);
             personimage=itemView.findViewById(R.id.personimage);
+            cancel=(Button)itemView.findViewById(R.id.cancel);
 
         }
 
@@ -100,7 +109,6 @@ public class JobHistoryAdapter extends RecyclerView.Adapter<JobHistoryAdapter.Vi
             System.out.print("asdfbgg"+pname1);
 
             this.context.startActivity(intent);
-
 
         }
     }

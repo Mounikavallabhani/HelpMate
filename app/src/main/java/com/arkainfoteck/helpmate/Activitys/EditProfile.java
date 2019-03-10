@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class EditProfile extends AppCompatActivity {
     Button update;
-    EditText eusername,eflatno,earea,edistrict,estate,epincode;
+    EditText eusername;
     TextView eemail,eph;
     SharedPreferences sharedPreferences;
     String susername,sph,susermail;
@@ -43,11 +43,7 @@ public class EditProfile extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
         update=findViewById(R.id.update);
         eusername=findViewById(R.id.eusername);
-        eflatno=findViewById(R.id.eflatno);
-        earea=findViewById(R.id.earea);
-        edistrict=findViewById(R.id.edistrict);
-        estate=findViewById(R.id.estate);
-        epincode=findViewById(R.id.epincode);
+
         eemail=findViewById(R.id.eemail);
         eph=findViewById(R.id.eph);
 
@@ -76,11 +72,6 @@ public class EditProfile extends AppCompatActivity {
             eusername.setText(susername);
             eemail.setText(susermail);
             eph.setText(sph);
-            eflatno.setText(sdoorno);
-            earea.setText(sarea);
-            edistrict.setText(sdistricts);
-            epincode.setText(sarea);
-            estate.setText(sstatus);
 
 
 
@@ -101,33 +92,6 @@ public class EditProfile extends AppCompatActivity {
                 {
                     eph.requestFocus();
                     eph.setError("Provide name");
-                }
-                else if(eflatno.getText().toString().isEmpty())
-                {
-                    eflatno.requestFocus();
-                    eflatno.setError("Provide name");
-                }
-
-                else if(earea.getText().toString().isEmpty())
-                {
-                    earea.requestFocus();
-                    earea.setError("Provide name");
-                }
-
-                else if(edistrict.getText().toString().isEmpty())
-                {
-                    edistrict.requestFocus();
-                    edistrict.setError("Provide name");
-                }
-                else if(estate.getText().toString().isEmpty())
-                {
-                    estate.requestFocus();
-                    estate.setError("Provide name");
-                }
-                else if(epincode.getText().toString().isEmpty())
-                {
-                    epincode.requestFocus();
-                    epincode.setError("Provide name");
                 }
                 else {
                     EditProfileJsondata();
@@ -259,11 +223,11 @@ public class EditProfile extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("id",registerid);
                 params.put("fname",eusername.getText().toString());
-                params.put("door_no",eflatno.getText().toString());
-                params.put("area",earea.getText().toString());
-                params.put("disstricts",edistrict.getText().toString());
-                params.put("state",estate.getText().toString());
-                params.put("pincode",epincode.getText().toString());
+                params.put("door_no"," ");
+                params.put("area"," ");
+                params.put("disstricts"," ");
+                params.put("state"," ");
+                params.put("pincode"," ");
                 return params;
             }
         };

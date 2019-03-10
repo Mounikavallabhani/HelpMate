@@ -7,6 +7,9 @@
     android:background="@color/cream"
     tools:context=".Activitys.CheckOut"
     android:orientation="vertical">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -174,7 +177,7 @@
 
                 <EditText
                     android:fontFamily="@font/main"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:maxLength="10"
                     android:id="@+id/house_number"
                     android:layout_marginTop="20dp"
@@ -187,7 +190,7 @@
                     android:layout_height="40dp" />
                 <EditText
                     android:fontFamily="@font/main"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:maxLength="10"
                     android:id="@+id/colony_name"
                     android:layout_marginTop="20dp"
@@ -256,7 +259,7 @@
 
     </LinearLayout>
 
-
+    </android.support.v4.widget.NestedScrollView>
 
     </LinearLayout>
 
